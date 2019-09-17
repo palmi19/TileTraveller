@@ -32,27 +32,27 @@ def North():
     if y_pos + 1 <= 3:
         y_pos += 1    
     else:
-        print("Direction: Not a valid direction!")
+        print("Not a valid direction!")
     print (x_pos, y_pos)
 
 def South():
     global x_pos
     global y_pos
-    if y_pos + 1 <= 3:
+    if y_pos - 1 > 0:
         y_pos -= 1
     else:
-        print("Direction: Not a valid direction!")   
+        print("Not a valid direction!")   
     print (x_pos, y_pos)
 
 
 def controller():                                                                       
     while True:
-        control_input = input("Input your choice: ")
+        control_input = input("Direction: ")
         if control_input == "e":
             East()
         elif control_input == "w":
             West()
-        elif control_input == "S":
+        elif control_input == "s":
             South()
         elif control_input == "n":
             North()
