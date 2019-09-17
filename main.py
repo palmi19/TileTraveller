@@ -2,8 +2,8 @@ x_pos = 1
 y_pos = 1
 
                                                              
-def game():                                                                             
-    #print(STRING[:x_pos-1] + "o"+ STRING[0:(10 - x_pos)])                         
+def game(): 
+    print("You can travel: (N)orth.")                                                                            
     #print("l - for moving left\nr - for moving right\nAny other letter for quitting")
     controller()
      
@@ -13,13 +13,17 @@ def West():
     global y_pos
     if x_pos - 1 > 0:                                                                
         x_pos -= 1
+    else:
+        print("Direction: Not a valid direction!")
     print (x_pos,y_pos)
 
 def East():
     global x_pos
     global y_pos
     if x_pos + 1 <= 3:
-        x_pos += 1    
+        x_pos += 1 
+    else:
+        print("Direction: Not a valid direction!")   
     print (x_pos, y_pos)
     
 def North():
@@ -27,13 +31,17 @@ def North():
     global y_pos
     if y_pos + 1 <= 3:
         y_pos += 1    
+    else:
+        print("Direction: Not a valid direction!")
     print (x_pos, y_pos)
 
 def South():
     global x_pos
     global y_pos
     if y_pos + 1 <= 3:
-        y_pos -= 1    
+        y_pos -= 1
+    else:
+        print("Direction: Not a valid direction!")   
     print (x_pos, y_pos)
 
 
@@ -50,5 +58,6 @@ def controller():
             North()
         else:
             return False
-    
+
+
 game()
